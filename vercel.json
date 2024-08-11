@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/main.js",
+      "src": "api/[...catchall].ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "api/[...catchall].ts"
     }
   ]
 }
