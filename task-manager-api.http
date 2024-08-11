@@ -1,5 +1,5 @@
 ### Register a new user
-POST http://localhost:3000/users/register
+POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### Login the user to get a JWT token
-POST http://localhost:3000/auth/login
+POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 ### After running the above request, copy the JWT token from the response and use it in the Authorization header for the following requests:
 
 ### Create a new task (Make sure to replace <JWT_TOKEN> with the actual token)
-POST http://localhost:3000/tasks
+POST http://localhost:3000/api/tasks
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhlc2hhbSIsImlhdCI6MTcyMzQxMjI4MywiZXhwIjoxNzIzNDE1ODgzfQ.34o_UBI8aeAoPvwX_fbrqlHlySm7NW3pbu4HekHQybY
 
@@ -31,11 +31,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhlc
 }
 
 ### Get all tasks for a user (Make sure to replace <JWT_TOKEN> and <USER_ID> with actual values)
-GET http://localhost:3000/tasks/user/66b92e7acd2e9bc97a437422
+GET http://localhost:3000/api/tasks/user/66b92e7acd2e9bc97a437422
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhlc2hhbSIsImlhdCI6MTcyMzQxMjI4MywiZXhwIjoxNzIzNDE1ODgzfQ.34o_UBI8aeAoPvwX_fbrqlHlySm7NW3pbu4HekHQybY
 
 ### Update a task status (Make sure to replace <JWT_TOKEN> and <TASK_ID> with actual values)
-PATCH http://localhost:3000/tasks/<TASK_ID>
+PATCH http://localhost:3000/api/tasks/<TASK_ID>
 Content-Type: application/json
 Authorization: Bearer <JWT_TOKEN>
 
@@ -44,5 +44,5 @@ Authorization: Bearer <JWT_TOKEN>
 }
 
 ### Delete a task (Make sure to replace <JWT_TOKEN> and <TASK_ID> with actual values)
-DELETE http://localhost:3000/tasks/<TASK_ID>
+DELETE http://localhost:3000/api/tasks/<TASK_ID>
 Authorization: Bearer <JWT_TOKEN>
